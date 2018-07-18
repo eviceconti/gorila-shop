@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
+import { ListItemsService } from '../list-items.service';
+
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
@@ -14,10 +16,12 @@ export class AddItemComponent implements OnInit {
 
   //method will be called on user click
   public handleSubmit() {
+    this.listItemsService.addItem(this.newItemForm.value.newItem);
+    this.newItemForm.reset();
     console.log(this.newItemForm.value.newItem);
   }
 
-  constructor() { }
+  constructor(private listItemsService: ListItemsService) { }
 
   ngOnInit() {
   }
