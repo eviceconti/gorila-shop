@@ -1,19 +1,42 @@
 <section class="mainList">
   <ul class="list">
     <li 
-      *ngFor="let item of items; let i=index"
+      *ngFor="let item of uncheckedItems"
       class="list__item"
     >
       <input 
         type="checkbox"
-        [id]="item"
+        [id]="item.name"
         class="list__checkbox"
+        (click)="toggleItem(item.name)"
       >
-      <label [for]="item" class="list__label">{{item}}</label>
+      <label [for]="item.name" class="list__label">{{item.name}}</label>
       <button 
         class="list__delete"
-        (click)="deleteItem(i)"
+        (click)="deleteItem(item.name)"
       >x</button>
     </li>
   </ul>
 </section>
+
+<section class="checkedList">
+  <ul class="list">
+    <li 
+      *ngFor="let item of checkedItems"
+      class="list__item"
+    >
+      <input 
+        type="checkbox"
+        [id]="item.name"
+        class="list__checkbox"
+        (click)="toggleItem(item.name)"
+      >
+      <label [for]="item.name" class="list__label--checked">{{item.name}}</label>
+      <button 
+        class="list__delete"
+        (click)="deleteItem(item.name)"
+      >x</button>
+    </li>
+  </ul>
+</section>
+

@@ -18,3 +18,8 @@
   text-decoration: line-through;
   color: #ccc;
 }
+
+.list__label--checked {
+  text-decoration: line-through;
+  color: #ccc;
+}

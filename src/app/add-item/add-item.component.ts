@@ -17,7 +17,7 @@ export class AddItemComponent implements OnInit {
   //method will be called on user click
   public handleSubmit() {
     let item = this.newItemForm.controls.newItem.value;
-    let items = this.listItemsService.items;
+    let items = this.listItemsService.getUncheckedItems();
     let match = [];
     
     //check if the array is not empty and if item already exists in the array, before push it as a new item

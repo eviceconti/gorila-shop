@@ -7,16 +7,39 @@ import { ListItemsService } from '../list-items.service';
   styleUrls: ['./main-list.component.css']
 })
 export class MainListComponent implements OnInit {
-  public items: string[] = [];
+  public items: any[] = [];
+  public checkedItems: any[] = [];
+  public uncheckedItems: any[] = [];
 
-  public deleteItem(index: number) {
-    this.listItemsService.deleteItem(index);
+  public deleteItem(name: string) {
+    this.listItemsService.deleteItem(name);
+  }
+
+  public toggleItem(name: string) {
+    this.listItemsService.toggleCheckedItem(name);
   }
 
   constructor(private listItemsService: ListItemsService) { }
 
-  ngOnInit() {
-    this.items = this.listItemsService.items;
+  ngOnInit() { 
+    
+  }
+
+  ngAfterContentChecked() {
+    this.uncheckedItems = this.listItemsService.getUncheckedItems();
+    this.checkedItems = this.listItemsService.getCheckedItems();
   }
 
 }
+
+
+/*
+this.checkedItems = [];
+    this.uncheckedItems = [];
+    this.listItemsService.items.map(item => {
+      (item.checked)
+      ? this.checkedItems.push(item)
+      : this.uncheckedItems.push(item);
+    });
+    console.log(this.checkedItems, this.uncheckedItems);
+*/
