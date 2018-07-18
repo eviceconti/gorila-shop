@@ -1,3 +1,19 @@
-<p>
-  main-list works!
-</p>
+<section class="mainList">
+  <ul class="list">
+    <li 
+      *ngFor="let item of items; let i=index"
+      class="list__item"
+    >
+      <input 
+        type="checkbox"
+        [id]="item"
+        class="list__checkbox"
+      >
+      <label [for]="item" class="list__label">{{item}}</label>
+      <button 
+        class="list__delete"
+        (click)="deleteItem(i)"
+      >x</button>
+    </li>
+  </ul>
+</section>

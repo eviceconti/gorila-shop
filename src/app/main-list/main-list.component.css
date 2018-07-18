@@ -1,0 +1,20 @@
+.list {
+  list-style: none;
+}
+
+.list__item {
+  
+}
+
+.list__checkbox {
+  display: none;
+}
+
+.list__label {
+  cursor: pointer;
+}
+
+.list__checkbox:checked ~ .list__label {
+  text-decoration: line-through;
+  color: #ccc;
+}
