@@ -1,4 +1,5 @@
 import { Item } from './item.model';
+import * as firebase from 'firebase';
 
 export class ListItemsService {
   private items: Item[] = [];
