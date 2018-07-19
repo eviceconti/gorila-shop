@@ -66,3 +66,10 @@
   padding-left: .8rem;
   fill: #ccc;
 }
+
+.border {
+  width: 100%;
+  background-image: url(../../../assets/wave.png);
+  background-size: auto 6px;
+  height: 6px;
+}
