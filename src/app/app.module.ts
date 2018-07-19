@@ -9,12 +9,12 @@ import { ROUTES } from './app.routes';
 //import Services
 import { ListItemsService } from './list-items.service';
 import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
 
 //Import Components
 import { AppComponent } from './app.component';
-import { AddItemComponent } from './add-item/add-item.component';
-import { MainListComponent } from './main-list/main-list.component';
-import { TickedListComponent } from './ticked-list/ticked-list.component';
+import { AddItemComponent } from './home/add-item/add-item.component';
+import { MainListComponent } from './home/main-list/main-list.component';
 import { AccessComponent } from './access/access.component';
 import { RegisterComponent } from './access/register/register.component';
 import { LoginComponent } from './access/login/login.component';
@@ -27,7 +27,6 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     AddItemComponent,
     MainListComponent,
-    TickedListComponent,
     AccessComponent,
     RegisterComponent,
     LoginComponent,
@@ -40,7 +39,8 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [ 
     ListItemsService,
-    AuthService 
+    AuthService,
+    AuthGuardService 
   ],
   bootstrap: [AppComponent]
 })

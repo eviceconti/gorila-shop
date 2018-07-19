@@ -61,7 +61,7 @@ export class AuthService {
         this.tokenId = localStorage.getItem('token');
       }
     
-    // return true if tokenId !== undefined. This method is called by Auth-Guard, this true return enable /main route 
+    // return true if tokenId !== undefined. This method is called by Auth-Guard Service, this true return enable /main route 
     return this.tokenId !== undefined;
   }
 

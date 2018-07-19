@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { ListItemsService } from '../list-items.service';
+import { ListItemsService } from '../../list-items.service';
 
 @Component({
   selector: 'app-add-item',
