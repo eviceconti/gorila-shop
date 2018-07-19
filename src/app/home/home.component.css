@@ -12,6 +12,13 @@
   color: #fafafa;
 }
 
+/*screens smaller than 450px*/
+@media only screen and (max-width: 28.125em) {
+  .title h1 {
+    font-size: 2rem;
+  }
+}
+
 .btn__box { 
   position: absolute;
   top: 50%;
@@ -39,4 +46,19 @@
   width: 1.75rem;
   padding: .2rem;
   fill: #ccc;
+}
+
+/*screens smaller than 600px*/
+@media only screen and (max-width: 37.5em) {
+  .btn__box { 
+    top: 60%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: .3rem;
+  }
 }
