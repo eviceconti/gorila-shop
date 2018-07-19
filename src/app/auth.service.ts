@@ -8,7 +8,9 @@ import * as firebase from 'firebase'
 export class AuthService {
   public tokenId: string;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ) {}
 
   public createUser(user: User): Promise<any> {
     return firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -18,14 +20,14 @@ export class AuthService {
         this.dbNameRegister(user);
       });
   }
-  public loginUser(user: User) {
+  public userLogin(user: User) {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
       .then( () => {
         firebase.auth().currentUser.getIdToken()
           .then( (tokenId) => {
             this.tokenId = tokenId;
             localStorage.setItem('token', tokenId);
-            this.router.navigate(['/main']);
+            this.router.navigate(['/home']);
           });
       });
   }
