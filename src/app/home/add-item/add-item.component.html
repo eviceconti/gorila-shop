@@ -1,12 +1,23 @@
-<form 
+<div class="add-item">
+  <form 
   class="form"
   [formGroup]="newItemForm"
   (ngSubmit)="handleSubmit()"
->
-  <input 
-    type="text" 
-    class="form__input"
-    formControlName="newItem"
   >
-  <button class="form__button" type="submit">+</button>
-</form>
+    <div class="input__box">
+      <input 
+        type="text" 
+        class="form__input"
+        formControlName="newItem"
+        placeholder="+ add new item"
+      >
+    </div>
+    <div class="btn__box">
+      <button class="btn" type="submit">
+        <svg class="btn__icon">
+          <use xlink:href="../../../assets/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+  </form>
+</div>

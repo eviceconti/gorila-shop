@@ -1,0 +1,13 @@
+.title {
+  background-image: linear-gradient(to right, rgb(0, 187, 176), rgb(0, 140, 175));
+  text-align: center;
+  padding: 1rem 2rem;
+  
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fafafa;
+}

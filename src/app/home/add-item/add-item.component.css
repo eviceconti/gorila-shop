@@ -1,0 +1,54 @@
+.add-item {
+  background-image: linear-gradient(to right, rgb(0, 187, 176), rgb(0, 140, 175));
+}
+
+.form {
+  position: relative;
+}
+
+.input__box {
+  width: 60%;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1rem 0;
+  margin-left: 20%;
+}
+
+.form__input {
+  background-color: rgba(0, 187, 176, .5);
+  border: none;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: .5rem 1rem;
+  color: #555;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__input::placeholder {
+  color: #ccc;
+}
+
+.btn__box { 
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  border-left: 1px solid #ccc;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.btn__icon {
+  height: 1.75rem;
+  width: 1.75rem;
+  padding: .2rem;
+  padding-left: .8rem;
+  fill: #ccc;
+}

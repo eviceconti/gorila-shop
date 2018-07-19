@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/*reset*/
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /*defines the 1 rem base = 10px. 10px/16px = 62.5%*/
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+}

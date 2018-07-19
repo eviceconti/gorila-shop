@@ -1,6 +1,8 @@
-<div *ngIf="panel == 'login'; else register" class="">
-  <app-login (panel)="showPanel($event)"></app-login>
-</div>
-<ng-template #register>
-  <app-register (panel)="showPanel($event)"></app-register>
-</ng-template>
+<section class="access">
+  <div *ngIf="panel == 'login'; else register" class="">
+    <app-login (panel)="showPanel($event)"></app-login>
+  </div>
+  <ng-template #register>
+    <app-register (panel)="showPanel($event)"></app-register>
+  </ng-template>
+</section>
