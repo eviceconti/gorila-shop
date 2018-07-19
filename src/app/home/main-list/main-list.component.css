@@ -1,9 +1,30 @@
+.main-list {
+  background-color: #fff;
+  padding: 1rem 0;
+}
+
+.checked-list {
+  padding: 1rem 0;
+}
+
 .list {
   list-style: none;
+  margin-left: 20%;
+  width: 60%;
 }
 
 .list__item {
-  
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: #555;
+  text-transform: capitalize;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.list__item:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 .list__checkbox {
@@ -22,4 +43,26 @@
 .list__label--checked {
   text-decoration: line-through;
   color: #ccc;
+}
+
+.btn__box { 
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  border-left: 1px solid #ccc;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.btn__icon {
+  height: 1.75rem;
+  width: 1.75rem;
+  padding: .2rem;
+  padding-left: .8rem;
+  fill: #ccc;
 }

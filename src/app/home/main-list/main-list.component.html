@@ -1,42 +1,53 @@
-<section class="mainList">
+<section class="main-list">
   <ul class="list">
     <li 
       *ngFor="let item of uncheckedItems"
       class="list__item"
     >
-      <input 
+      <input
         type="checkbox"
         [id]="item.name"
         class="list__checkbox"
         (click)="toggleItem(item.name)"
       >
       <label [for]="item.name" class="list__label">{{item.name}}</label>
-      <button 
-        class="list__delete"
-        (click)="deleteItem(item.name)"
-      >x</button>
+      <div class="btn__box">
+        <button 
+          class="btn"
+          (click)="deleteItem(item.name)"
+        >
+        <svg class="btn__icon">
+          <use xlink:href="../../../assets/sprite.svg#icon-close"></use>
+        </svg>
+        </button>
+      </div>
     </li>
   </ul>
 </section>
 
-<section class="checkedList">
+<section class="checked-list">
   <ul class="list">
     <li 
       *ngFor="let item of checkedItems"
       class="list__item"
     >
-      <input 
+      <input
         type="checkbox"
         [id]="item.name"
         class="list__checkbox"
         (click)="toggleItem(item.name)"
       >
       <label [for]="item.name" class="list__label--checked">{{item.name}}</label>
-      <button 
-        class="list__delete"
-        (click)="deleteItem(item.name)"
-      >x</button>
+      <div class="btn__box">
+        <button 
+          class="btn"
+          (click)="deleteItem(item.name)"
+        >
+        <svg class="btn__icon">
+          <use xlink:href="../../../assets/sprite.svg#icon-close"></use>
+        </svg>
+        </button>
+      </div>
     </li>
   </ul>
 </section>
-

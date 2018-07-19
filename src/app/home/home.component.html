@@ -1,8 +1,14 @@
 <section class="home">
   <div class="title">
     <h1>GorilaShop - Shopping List</h1>
+    <div class="btn__box">
+      <button class="btn" (click)="logoff()">
+        <svg class="btn__icon">
+          <use xlink:href="../../../assets/sprite.svg#icon-enter"></use>
+        </svg>
+      </button>
+    </div>
   </div>
   <app-add-item></app-add-item>
   <app-main-list></app-main-list>
-  <button class="logoff" (click)="logoff()">Logoff</button>
 </section>
