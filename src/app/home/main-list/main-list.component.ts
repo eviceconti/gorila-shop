@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListItemsService } from '../../list-items.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-main-list',
@@ -10,36 +11,33 @@ export class MainListComponent implements OnInit {
   public items: any[] = [];
   public checkedItems: any[] = [];
   public uncheckedItems: any[] = [];
+  public email: string;
 
   public deleteItem(name: string) {
-    this.listItemsService.deleteItem(name);
+    this.listItemsService.deleteItem(this.email, name);
   }
 
   public toggleItem(name: string) {
-    this.listItemsService.toggleCheckedItem(name);
+    this.listItemsService.toggleCheckedItem(this.email, name);
   }
 
-  constructor(private listItemsService: ListItemsService) { }
+  constructor(
+    private listItemsService: ListItemsService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() { 
-    
+    this.authService.getEmail().then(email => {
+      this.email = email;
+      this.listItemsService.fetchItems(this.email)
+      .then(items => {
+        this.items = items;
+      });
+    });
   }
 
   ngAfterContentChecked() {
     this.uncheckedItems = this.listItemsService.getUncheckedItems();
     this.checkedItems = this.listItemsService.getCheckedItems();
   }
-
 }
-
-
-/*
-this.checkedItems = [];
-    this.uncheckedItems = [];
-    this.listItemsService.items.map(item => {
-      (item.checked)
-      ? this.checkedItems.push(item)
-      : this.uncheckedItems.push(item);
-    });
-    console.log(this.checkedItems, this.uncheckedItems);
-*/

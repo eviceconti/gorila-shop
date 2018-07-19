@@ -20,6 +20,7 @@ export class AuthService {
         this.dbNameRegister(user);
       });
   }
+  
   public userLogin(user: User) {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
       .then( () => {
@@ -32,8 +33,10 @@ export class AuthService {
       });
   }
 
-  public getEmail(): string {
-    return btoa(firebase.auth().currentUser.email);
+  public getEmail(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      resolve(btoa(firebase.auth().currentUser.email));
+    })
   }
 
   public dbNameRegister(user: User) {
